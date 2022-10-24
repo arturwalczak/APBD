@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Task01": {
+      "commandName": "Project",
+      "commandLineArgs": "https://www.emc-sa.pl\r\n"
+    }
+  }
+}
