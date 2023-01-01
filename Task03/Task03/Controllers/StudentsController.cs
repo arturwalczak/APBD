@@ -11,6 +11,8 @@ namespace Task03.Controllers
     [ApiController]
     public class StudentsController : ControllerBase
     {
+
+
         [HttpGet]
         public IActionResult GetStudents()
         {
@@ -51,7 +53,8 @@ namespace Task03.Controllers
             Student.students.Remove(studentFound);
             return Ok(student);
             Program.SaveStudents();
-                       
+
+
         }
 
         [HttpPost]
@@ -78,13 +81,14 @@ namespace Task03.Controllers
             try
             {
                 Student s2 = student;
+                Program.SaveStudents();
                 return Ok("Student added");
             }
             catch
             {
                 return BadRequest("Student can't be created, invalid data");
             }
-            Program.SaveStudents();
+            
 
         }
 
@@ -92,8 +96,9 @@ namespace Task03.Controllers
         public IActionResult DeleteStudent(string indexNumber)
         {
             Student.students.Remove(Student.students.Find(Student => Student.indexNumber.Equals(indexNumber)));
-            return Ok("Student deleted");
             Program.SaveStudents();
+            return Ok("Student deleted");
+            
         }
 
 
