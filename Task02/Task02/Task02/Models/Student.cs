@@ -10,23 +10,22 @@ namespace Task02.Models
 {
     internal class Student
     {
-        [JsonProperty]
+        [Required]
         private string firstname { get; set; }
-        [JsonProperty]
+        [Required]
         private string lastname { get; set; }
-        [JsonProperty]
+        [Required]
         private string studentNumber { get; set; }
-        [JsonProperty]
+        [Required]
         private string birthdate { get; set; }
-        [JsonProperty]
+        [Required]
         private string email { get; set; }
-        [JsonProperty]
+        [Required]
         private string mothersName { get; set; }
-        [JsonProperty]
-        private string fathersName { get; set; }
-        
+        [Required]
+        private string fathersName { get; set; }       
 
-        private List<activeStudies> studies = new();
+        
 
         public static List<Student> students = new();       
 
@@ -43,21 +42,7 @@ namespace Task02.Models
             students.Add(this);
         }
 
-        public void addStudies (activeStudies studies)
-        {
-            this.studies.Add (studies);
-        }
-
-        public static bool isStudent(string firstname, string lastname, string studentNumber)
-        {
-            if (students.Find(c => (c.firstname == firstname) && (c.lastname == lastname) && (c.studentNumber == studentNumber)) != null)
-            {
-                return true;
-            } else
-            {
-                return false;
-            }
-        }
+        
 
         public override string ToString()
         {

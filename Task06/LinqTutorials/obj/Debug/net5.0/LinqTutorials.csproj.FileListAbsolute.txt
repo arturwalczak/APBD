@@ -1,0 +1,16 @@
+C:\Users\Dom\OneDrive\PJATK\APBD\APBD\Task06\LinqTutorials\obj\Debug\net5.0\LinqTutorials.csproj.AssemblyReference.cache
+C:\Users\Dom\OneDrive\PJATK\APBD\APBD\Task06\LinqTutorials\obj\Debug\net5.0\LinqTutorials.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dom\OneDrive\PJATK\APBD\APBD\Task06\LinqTutorials\obj\Debug\net5.0\LinqTutorials.AssemblyInfoInputs.cache
+C:\Users\Dom\OneDrive\PJATK\APBD\APBD\Task06\LinqTutorials\obj\Debug\net5.0\LinqTutorials.AssemblyInfo.cs
+C:\Users\Dom\OneDrive\PJATK\APBD\APBD\Task06\LinqTutorials\obj\Debug\net5.0\LinqTutorials.csproj.CoreCompileInputs.cache
+C:\Users\Dom\OneDrive\PJATK\APBD\APBD\Task06\LinqTutorials\bin\Debug\net5.0\LinqTutorials.exe
+C:\Users\Dom\OneDrive\PJATK\APBD\APBD\Task06\LinqTutorials\bin\Debug\net5.0\LinqTutorials.deps.json
+C:\Users\Dom\OneDrive\PJATK\APBD\APBD\Task06\LinqTutorials\bin\Debug\net5.0\LinqTutorials.runtimeconfig.json
+C:\Users\Dom\OneDrive\PJATK\APBD\APBD\Task06\LinqTutorials\bin\Debug\net5.0\LinqTutorials.runtimeconfig.dev.json
+C:\Users\Dom\OneDrive\PJATK\APBD\APBD\Task06\LinqTutorials\bin\Debug\net5.0\LinqTutorials.dll
+C:\Users\Dom\OneDrive\PJATK\APBD\APBD\Task06\LinqTutorials\bin\Debug\net5.0\LinqTutorials.pdb
+C:\Users\Dom\OneDrive\PJATK\APBD\APBD\Task06\LinqTutorials\obj\Debug\net5.0\LinqTutorials.dll
+C:\Users\Dom\OneDrive\PJATK\APBD\APBD\Task06\LinqTutorials\obj\Debug\net5.0\refint\LinqTutorials.dll
+C:\Users\Dom\OneDrive\PJATK\APBD\APBD\Task06\LinqTutorials\obj\Debug\net5.0\LinqTutorials.pdb
+C:\Users\Dom\OneDrive\PJATK\APBD\APBD\Task06\LinqTutorials\obj\Debug\net5.0\LinqTutorials.genruntimeconfig.cache
+C:\Users\Dom\OneDrive\PJATK\APBD\APBD\Task06\LinqTutorials\obj\Debug\net5.0\ref\LinqTutorials.dll
