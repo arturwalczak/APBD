@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace cwiczenia11
+namespace Task11
 {
     #line hidden
     using System;
@@ -13,78 +13,78 @@ namespace cwiczenia11
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 1 "C:\Users\artur.walczak\OneDrive\PJATK\APBD\GIT czesiek2000\apbd\zadanie11\cwiczenia11\_Imports.razor"
+#line 1 "C:\Users\Dom\OneDrive\PJATK\APBD\APBD\cwiczenia11\_Imports.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\artur.walczak\OneDrive\PJATK\APBD\GIT czesiek2000\apbd\zadanie11\cwiczenia11\_Imports.razor"
+#line 2 "C:\Users\Dom\OneDrive\PJATK\APBD\APBD\cwiczenia11\_Imports.razor"
 using Microsoft.AspNetCore.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\artur.walczak\OneDrive\PJATK\APBD\GIT czesiek2000\apbd\zadanie11\cwiczenia11\_Imports.razor"
+#line 3 "C:\Users\Dom\OneDrive\PJATK\APBD\APBD\cwiczenia11\_Imports.razor"
 using Microsoft.AspNetCore.Components.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Users\artur.walczak\OneDrive\PJATK\APBD\GIT czesiek2000\apbd\zadanie11\cwiczenia11\_Imports.razor"
+#line 4 "C:\Users\Dom\OneDrive\PJATK\APBD\APBD\cwiczenia11\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\Users\artur.walczak\OneDrive\PJATK\APBD\GIT czesiek2000\apbd\zadanie11\cwiczenia11\_Imports.razor"
+#line 5 "C:\Users\Dom\OneDrive\PJATK\APBD\APBD\cwiczenia11\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\Users\artur.walczak\OneDrive\PJATK\APBD\GIT czesiek2000\apbd\zadanie11\cwiczenia11\_Imports.razor"
+#line 6 "C:\Users\Dom\OneDrive\PJATK\APBD\APBD\cwiczenia11\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "C:\Users\artur.walczak\OneDrive\PJATK\APBD\GIT czesiek2000\apbd\zadanie11\cwiczenia11\_Imports.razor"
+#line 7 "C:\Users\Dom\OneDrive\PJATK\APBD\APBD\cwiczenia11\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web.Virtualization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "C:\Users\artur.walczak\OneDrive\PJATK\APBD\GIT czesiek2000\apbd\zadanie11\cwiczenia11\_Imports.razor"
+#line 8 "C:\Users\Dom\OneDrive\PJATK\APBD\APBD\cwiczenia11\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "C:\Users\artur.walczak\OneDrive\PJATK\APBD\GIT czesiek2000\apbd\zadanie11\cwiczenia11\_Imports.razor"
-using cwiczenia11;
+#line 9 "C:\Users\Dom\OneDrive\PJATK\APBD\APBD\cwiczenia11\_Imports.razor"
+using Task11;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 10 "C:\Users\artur.walczak\OneDrive\PJATK\APBD\GIT czesiek2000\apbd\zadanie11\cwiczenia11\_Imports.razor"
-using cwiczenia11.Shared;
+#line 10 "C:\Users\Dom\OneDrive\PJATK\APBD\APBD\cwiczenia11\_Imports.razor"
+using Task11.Shared;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 11 "C:\Users\artur.walczak\OneDrive\PJATK\APBD\GIT czesiek2000\apbd\zadanie11\cwiczenia11\_Imports.razor"
-using cwiczenia11.Models;
+#line 11 "C:\Users\Dom\OneDrive\PJATK\APBD\APBD\cwiczenia11\_Imports.razor"
+using Task11.Models;
 
 #line default
 #line hidden

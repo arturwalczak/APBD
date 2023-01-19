@@ -2,7 +2,7 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace cwiczenia11.Data
+namespace Task11.Data
 {
     public class WeatherForecastService
     {

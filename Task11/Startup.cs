@@ -1,4 +1,4 @@
-using cwiczenia11.Data;
+using Task11.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Hosting;
@@ -11,7 +11,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace cwiczenia11
+namespace Task11
 {
     public class Startup
     {

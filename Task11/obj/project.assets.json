@@ -8,26 +8,27 @@
     "net5.0": []
   },
   "packageFolders": {
-    "C:\\Users\\artur.walczak\\.nuget\\packages\\": {}
+    "C:\\Users\\Dom\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\artur.walczak\\OneDrive\\PJATK\\APBD\\GIT czesiek2000\\apbd\\zadanie11\\cwiczenia11\\cwiczenia11.csproj",
-      "projectName": "cwiczenia11",
-      "projectPath": "C:\\Users\\artur.walczak\\OneDrive\\PJATK\\APBD\\GIT czesiek2000\\apbd\\zadanie11\\cwiczenia11\\cwiczenia11.csproj",
-      "packagesPath": "C:\\Users\\artur.walczak\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\artur.walczak\\OneDrive\\PJATK\\APBD\\GIT czesiek2000\\apbd\\zadanie11\\cwiczenia11\\obj\\",
+      "projectUniqueName": "C:\\Users\\Dom\\OneDrive\\PJATK\\APBD\\APBD\\cwiczenia11\\Task11.csproj",
+      "projectName": "Task11",
+      "projectPath": "C:\\Users\\Dom\\OneDrive\\PJATK\\APBD\\APBD\\cwiczenia11\\Task11.csproj",
+      "packagesPath": "C:\\Users\\Dom\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Dom\\OneDrive\\PJATK\\APBD\\APBD\\cwiczenia11\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\artur.walczak\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Dom\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {}
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net5.0": {
@@ -63,7 +64,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }

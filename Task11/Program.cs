@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace cwiczenia11
+namespace Task11
 {
     public class Program
     {

@@ -1,6 +1,6 @@
 using System;
 
-namespace cwiczenia11.Data
+namespace Task11.Data
 {
     public class WeatherForecast
     {

@@ -22,9 +22,9 @@ namespace Task05.Controllers
         public async Task<IActionResult> AddProductToWarehouse([FromBody] ProductWarehouse productWarehouse)
         {
             int idProductWarehouse;
-            try { idProductWarehouse = await DbService.AddProductToWarehouseAsync(productWarehouse); }
-                        catch (Exception e) { return NotFound(e.Message); }
-            return Ok($"Succsesfully added ID: {idProductWarehouse}");
+            try { idProductWarehouse = await DbService.AddProductToWarehouseAsync(productWarehouse); }           
+            catch (Exception e) { return NotFound(e.Message); }
+            return Ok($"added");
         }
     }
 }

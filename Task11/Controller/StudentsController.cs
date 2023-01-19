@@ -1,11 +1,11 @@
-﻿using cwiczenia11.Models;
+﻿using Task11.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace cwiczenia11.Controller
+namespace Task11.Controller
 {
     [ApiController]
     [Route("/api/students")]

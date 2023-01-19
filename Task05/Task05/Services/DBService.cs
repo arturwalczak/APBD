@@ -16,157 +16,105 @@ namespace Task05.Services
         }
         public async Task<int> AddProductToWarehouseAsync(ProductWarehouse productWarehouse)
         {
-           // var connection = new SqlConnection(_configuration.GetConnectionString("ProductionDb"));
             
-            double price;
-            int idOrder;
-
-
-            using (var connection = new SqlConnection(_configuration.GetConnectionString("ProductionDb")))
+            var warehouseId = 0;
+            var order = 0;
+            var price = 0;
+            using (var conn = new SqlConnection(_configuration.GetConnectionString("ProductionDb")))
             {
-                connection.Open();
-                using (var command = connection.CreateCommand())
+                conn.Open();
+
+                using (SqlTransaction transaction = conn.BeginTransaction())
                 {
-                    command.CommandText = $"SELECT Price FROM Product WHERE IdProduct = {productWarehouse.IdProduct}";
-                    using (var reader = command.ExecuteReader())
+                    //conn.Open();
+                    SqlCommand com = new SqlCommand();
+                    com.Transaction = transaction;
+
+
+                    using (com = new SqlCommand())
                     {
-                        Console.WriteLine("duuuuupa");
-                        await reader.ReadAsync();
-                        if (!reader.HasRows) throw new Exception("No Product found");
-                        price = double.Parse(reader["Price"].ToString());
+                        com.Connection = conn;
 
-                    }
+                        com.Transaction = transaction;
 
+                        com.CommandText = "SELECT * FROM WAREHOUSE WHERE IDWAREHOUSE = " + productWarehouse.IdProduct;
 
-                }
-
-
-
-
-                using (var command = connection.CreateCommand())
-                {
-                    command.CommandText = $"SELECT IdWarehouse FROM Warehouse WHERE IdWarehouse = {productWarehouse.IdWarehouse}";
-                    using (var reader = command.ExecuteReader())
-                    {
-                        await reader.ReadAsync();
-                        /*int warehouseCount = (int)command.ExecuteScalar();
-
-                        if (warehouseCount != 1)
+                        using (SqlDataReader dr = await com.ExecuteReaderAsync())
                         {
-                            throw new Exception("Warehouse not found");
-                        }*/
-
+                            dr.Read();
+                            if (dr.HasRows)
+                            {
+                                warehouseId = int.Parse(dr["IdWarehouse"].ToString());
+                            }
+                        }
                     }
 
-                }
-
-
-
-
-
-
-                using (var command = connection.CreateCommand())
-                {
-                    command.CommandText = $"SELECT IdOrder FROM Order WHERE IdProduct = {productWarehouse.IdProduct} AND Amount = {productWarehouse.Amount} AND CreatedAt < {productWarehouse.CreatedAt}";
-                    using (var reader = command.ExecuteReader())
+                    using (com = new SqlCommand())
                     {
+                        com.Connection = conn;
+                        com.Transaction = transaction;
+                        com.CommandText = "SELECT * FROM ORDER WHERE WHERE IDPRODUCT = " + productWarehouse.IdProduct + " AND AMOUNT = " + productWarehouse.Amount;
 
-                        await reader.ReadAsync();
-                        if (!reader.HasRows) throw new Exception("No Order found");
-                        idOrder = int.Parse(reader["IdOrder"].ToString());
-
-                    }
-
-                }
-
-
-
-
-                using (var command = connection.CreateCommand())
-                {
-                    command.CommandText = $"SELECT IdWarehouse FROM Product_Warehouse LEFT JOIN Order ON Product_Warehouse.IdProduct = Order.IdProduct WHERE Amount = {productWarehouse.Amount}";
-                    using (var reader = command.ExecuteReader())
-                    {
-                        await reader.ReadAsync();
-                        /*int pendingCount = (int)command.ExecuteScalar();
-
-                        if (pendingCount != 0)
+                        using (SqlDataReader dr = await com.ExecuteReaderAsync())
                         {
-                            throw new Exception("Order already fullfilled");
-                        }*/
-
+                            dr.Read();
+                            if (dr.HasRows)
+                            {
+                                order = int.Parse(dr["IdOrder"].ToString());
+                            }
+                        }
                     }
+
+                    using (com = new SqlCommand())
+                    {
+                        com.Connection = conn;
+                        com.Transaction = transaction;
+                        if (order != 0)
+                        {
+
+                            com.CommandText = "SELECT * FROM PRODUCT_WAREHOUSE WHERE IDORDER = " + order;
+
+                            int rows = com.ExecuteNonQuery();
+                            if (rows != 0)
+                            {
+
+                            }
+                        }
+                    }
+
+                    using (com = new SqlCommand())
+                    {
+                        com.Connection = conn;
+                        com.Transaction = transaction;
+                        com.CommandText = "update order set FulfilledAt = " + DateTime.Now + " where idorder = " + order;
+                        com.ExecuteNonQuery();
+                    }
+
+                    using (com = new SqlCommand())
+                    {
+                        com.Connection = conn;
+                        com.Transaction = transaction;
+                        com.CommandText = "Select price from product where idproduct = " + productWarehouse.IdProduct;
+                        await com.ExecuteNonQueryAsync();
+                        SqlDataReader dr = await com.ExecuteReaderAsync();
+                        dr.Read();
+                        if (dr.HasRows)
+                        {
+                            price = int.Parse(dr["price"].ToString());
+                        }
+                        com.CommandText = $"INSERT INTO Product_Warehouse(IdWarehouse, IdProduct, IdOrder, Amount, Price, CreatedAt) VALUES( {productWarehouse.IdWarehouse}, {productWarehouse.IdProduct}, {order}, {productWarehouse.Amount}, {productWarehouse.Amount * price}, {productWarehouse.CreatedAt} );";
+                        await com.ExecuteNonQueryAsync();
+                    }
+
+                    await transaction.CommitAsync();
+                    await conn.CloseAsync();
 
                 }
             }
 
-            int idProductWarehouse;
-            using (var connection = new SqlConnection(_configuration.GetConnectionString("ProductionDb")))
-            {
-                connection.Open();
-                SqlDataReader reader2 = null;
-                
-                using (var cd = connection.CreateCommand())
-                {
-
-
-                    var transaction = (SqlTransaction)await connection.BeginTransactionAsync();
-                    cd.Transaction = transaction;
-
-
-                    try
-                    {
-                        cd.CommandText = "UPDATE [Order] SET FulfilledAt = @CreatedAt WHERE IdOrder = @IdOrder";
-                        cd.Parameters.AddWithValue("CreatedAt", productWarehouse.CreatedAt);
-                        cd.Parameters.AddWithValue("IdOrder", idOrder);
-
-                        int rowsUpdated = await cd.ExecuteNonQueryAsync();
-
-
-                        cd.Parameters.Clear();
-
-                        cd.CommandText = "INSERT INTO Product_Warehouse(IdWarehouse, IdProduct, IdOrder, Amount, Price, CreatedAt) " +
-                            $"VALUES(@IdWarehouse, @IdProduct, @IdOrder, @Amount, @Amount*{price}, @CreatedAt)";
-
-                        cd.Parameters.AddWithValue("IdWarehouse", productWarehouse.IdWarehouse);
-                        cd.Parameters.AddWithValue("IdProduct", productWarehouse.IdProduct);
-                        cd.Parameters.AddWithValue("IdOrder", idOrder);
-                        cd.Parameters.AddWithValue("Amount", productWarehouse.Amount);
-                        cd.Parameters.AddWithValue("CreatedAt", productWarehouse.CreatedAt);
-
-                        int rowsInserted = await cd.ExecuteNonQueryAsync();
-
-
-                        await transaction.CommitAsync();
-                    }
-                    catch (Exception)
-                    {
-                        await transaction.RollbackAsync();
-                        throw new Exception("Database error");
-                    }
-
-
-
-                    cd.Parameters.Clear();
-
-                    cd.CommandText = "SELECT TOP 1 IdProductWarehouse FROM Product_Warehouse ORDER BY IdProductWarehouse DESC";
-
-                    using (var reader = cd.ExecuteReader())
-                    {
-                        await reader2.ReadAsync();
-                        idProductWarehouse = int.Parse(reader2["IdProductWarehouse"].ToString());
-
-                    }
-
-                }
-            }
-            //await connection.CloseAsync();
-
-            return idProductWarehouse;
-
-
-
-
+            return 1;
         }
+
+        
     }
 }

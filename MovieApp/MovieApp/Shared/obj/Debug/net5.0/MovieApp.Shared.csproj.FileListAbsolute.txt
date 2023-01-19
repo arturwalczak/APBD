@@ -1,0 +1,12 @@
+C:\Users\Dom\OneDrive\PJATK\APBD\GIT czesiek2000\apbd\zadanie12\Ćwiczenia 12\MovieApp\MovieApp\Shared\bin\Debug\net5.0\MovieApp.Shared.deps.json
+C:\Users\Dom\OneDrive\PJATK\APBD\GIT czesiek2000\apbd\zadanie12\Ćwiczenia 12\MovieApp\MovieApp\Shared\bin\Debug\net5.0\MovieApp.Shared.dll
+C:\Users\Dom\OneDrive\PJATK\APBD\GIT czesiek2000\apbd\zadanie12\Ćwiczenia 12\MovieApp\MovieApp\Shared\bin\Debug\net5.0\MovieApp.Shared.pdb
+C:\Users\Dom\OneDrive\PJATK\APBD\GIT czesiek2000\apbd\zadanie12\Ćwiczenia 12\MovieApp\MovieApp\Shared\obj\Debug\net5.0\MovieApp.Shared.csproj.AssemblyReference.cache
+C:\Users\Dom\OneDrive\PJATK\APBD\GIT czesiek2000\apbd\zadanie12\Ćwiczenia 12\MovieApp\MovieApp\Shared\obj\Debug\net5.0\MovieApp.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dom\OneDrive\PJATK\APBD\GIT czesiek2000\apbd\zadanie12\Ćwiczenia 12\MovieApp\MovieApp\Shared\obj\Debug\net5.0\MovieApp.Shared.AssemblyInfoInputs.cache
+C:\Users\Dom\OneDrive\PJATK\APBD\GIT czesiek2000\apbd\zadanie12\Ćwiczenia 12\MovieApp\MovieApp\Shared\obj\Debug\net5.0\MovieApp.Shared.AssemblyInfo.cs
+C:\Users\Dom\OneDrive\PJATK\APBD\GIT czesiek2000\apbd\zadanie12\Ćwiczenia 12\MovieApp\MovieApp\Shared\obj\Debug\net5.0\MovieApp.Shared.csproj.CoreCompileInputs.cache
+C:\Users\Dom\OneDrive\PJATK\APBD\GIT czesiek2000\apbd\zadanie12\Ćwiczenia 12\MovieApp\MovieApp\Shared\obj\Debug\net5.0\MovieApp.Shared.dll
+C:\Users\Dom\OneDrive\PJATK\APBD\GIT czesiek2000\apbd\zadanie12\Ćwiczenia 12\MovieApp\MovieApp\Shared\obj\Debug\net5.0\refint\MovieApp.Shared.dll
+C:\Users\Dom\OneDrive\PJATK\APBD\GIT czesiek2000\apbd\zadanie12\Ćwiczenia 12\MovieApp\MovieApp\Shared\obj\Debug\net5.0\MovieApp.Shared.pdb
+C:\Users\Dom\OneDrive\PJATK\APBD\GIT czesiek2000\apbd\zadanie12\Ćwiczenia 12\MovieApp\MovieApp\Shared\obj\Debug\net5.0\ref\MovieApp.Shared.dll

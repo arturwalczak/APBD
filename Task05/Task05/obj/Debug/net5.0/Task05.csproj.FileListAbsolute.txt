@@ -32,3 +32,8 @@ C:\Users\Dom\OneDrive\PJATK\APBD\APBD\Task05\Task05\obj\Debug\net5.0\refint\Task
 C:\Users\Dom\OneDrive\PJATK\APBD\APBD\Task05\Task05\obj\Debug\net5.0\Task05.pdb
 C:\Users\Dom\OneDrive\PJATK\APBD\APBD\Task05\Task05\obj\Debug\net5.0\Task05.genruntimeconfig.cache
 C:\Users\Dom\OneDrive\PJATK\APBD\APBD\Task05\Task05\obj\Debug\net5.0\ref\Task05.dll
+C:\Users\Dom\OneDrive\PJATK\APBD\APBD\Task05\Task05\obj\Debug\net5.0\staticwebassets\Task05.StaticWebAssets.Pack.cache
+C:\Users\Dom\OneDrive\PJATK\APBD\APBD\Task05\Task05\obj\Debug\net5.0\staticwebassets\msbuild.Task05.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Dom\OneDrive\PJATK\APBD\APBD\Task05\Task05\obj\Debug\net5.0\staticwebassets\msbuild.build.Task05.props
+C:\Users\Dom\OneDrive\PJATK\APBD\APBD\Task05\Task05\obj\Debug\net5.0\staticwebassets\msbuild.buildMultiTargeting.Task05.props
+C:\Users\Dom\OneDrive\PJATK\APBD\APBD\Task05\Task05\obj\Debug\net5.0\staticwebassets\msbuild.buildTransitive.Task05.props

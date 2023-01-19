@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace cwiczenia11.Models
+namespace Task11.Models
 {
     public class Student
     {
