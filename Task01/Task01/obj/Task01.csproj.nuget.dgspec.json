@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Dom\\OneDrive\\PJATK\\APBD\\Ćwiczenie 1\\Task\\Task01\\Task01\\Task01.csproj": {}
+    "C:\\Users\\Dom\\OneDrive\\PJATK\\APBD\\APBD\\Task01\\Task01\\Task01.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Dom\\OneDrive\\PJATK\\APBD\\Ćwiczenie 1\\Task\\Task01\\Task01\\Task01.csproj": {
+    "C:\\Users\\Dom\\OneDrive\\PJATK\\APBD\\APBD\\Task01\\Task01\\Task01.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dom\\OneDrive\\PJATK\\APBD\\Ćwiczenie 1\\Task\\Task01\\Task01\\Task01.csproj",
+        "projectUniqueName": "C:\\Users\\Dom\\OneDrive\\PJATK\\APBD\\APBD\\Task01\\Task01\\Task01.csproj",
         "projectName": "Task01",
-        "projectPath": "C:\\Users\\Dom\\OneDrive\\PJATK\\APBD\\Ćwiczenie 1\\Task\\Task01\\Task01\\Task01.csproj",
+        "projectPath": "C:\\Users\\Dom\\OneDrive\\PJATK\\APBD\\APBD\\Task01\\Task01\\Task01.csproj",
         "packagesPath": "C:\\Users\\Dom\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dom\\OneDrive\\PJATK\\APBD\\Ćwiczenie 1\\Task\\Task01\\Task01\\obj\\",
+        "outputPath": "C:\\Users\\Dom\\OneDrive\\PJATK\\APBD\\APBD\\Task01\\Task01\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Dom\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -50,12 +50,30 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.13, 6.0.13]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[6.0.13, 6.0.13]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.13, 6.0.13]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.13, 6.0.13]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -28,7 +28,8 @@ namespace Task04.Services
                     command.Parameters.AddWithValue("category", animal.Category);
                     command.Parameters.AddWithValue("area", animal.Area);
                     command.Parameters.AddWithValue("idAnimal", idAnimal);
-                    connection.Open();                    
+                    connection.Open();
+                    command.ExecuteNonQuery();
                     connection.Close();
                 }
             }

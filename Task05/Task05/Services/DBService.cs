@@ -1,8 +1,11 @@
 ﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Primitives;
 using System;
+using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
+using System.Globalization;
 using System.Threading.Tasks;
-using System.Transactions;
 using Task05.Models;
 
 namespace Task05.Services
@@ -16,105 +19,132 @@ namespace Task05.Services
         }
         public async Task<int> AddProductToWarehouseAsync(ProductWarehouse productWarehouse)
         {
-            
-            var warehouseId = 0;
-            var order = 0;
-            var price = 0;
-            using (var conn = new SqlConnection(_configuration.GetConnectionString("ProductionDb")))
+            int idOrder;
+            double price = 0.0;
+            int idProductWarehouse;
+
+            using (var connection = new SqlConnection(_configuration.GetConnectionString("ProductionDb")))
             {
-                conn.Open();
+                await connection.OpenAsync();
 
-                using (SqlTransaction transaction = conn.BeginTransaction())
+                using (var cmd = new SqlCommand())
                 {
-                    //conn.Open();
-                    SqlCommand com = new SqlCommand();
-                    com.Transaction = transaction;
-
-
-                    using (com = new SqlCommand())
+                    cmd.Connection = connection;
+                    cmd.CommandText = "SELECT TOP 1 * FROM Product WHERE IdProduct = " + productWarehouse.IdProduct;
+                   
+                    using (var reader = await cmd.ExecuteReaderAsync())
                     {
-                        com.Connection = conn;
-
-                        com.Transaction = transaction;
-
-                        com.CommandText = "SELECT * FROM WAREHOUSE WHERE IDWAREHOUSE = " + productWarehouse.IdProduct;
-
-                        using (SqlDataReader dr = await com.ExecuteReaderAsync())
-                        {
-                            dr.Read();
-                            if (dr.HasRows)
-                            {
-                                warehouseId = int.Parse(dr["IdWarehouse"].ToString());
-                            }
+                        if (reader.HasRows) {                            
+                            await reader.ReadAsync();
+                            price = double.Parse(reader["price"].ToString());                                                       
                         }
-                    }
-
-                    using (com = new SqlCommand())
-                    {
-                        com.Connection = conn;
-                        com.Transaction = transaction;
-                        com.CommandText = "SELECT * FROM ORDER WHERE WHERE IDPRODUCT = " + productWarehouse.IdProduct + " AND AMOUNT = " + productWarehouse.Amount;
-
-                        using (SqlDataReader dr = await com.ExecuteReaderAsync())
+                        else
                         {
-                            dr.Read();
-                            if (dr.HasRows)
-                            {
-                                order = int.Parse(dr["IdOrder"].ToString());
-                            }
+                            throw new Exception("product not found");
                         }
+                        
                     }
-
-                    using (com = new SqlCommand())
+                    cmd.CommandText = "SELECT TOP 1 * FROM Warehouse WHERE IdWarehouse = " + productWarehouse.IdWarehouse;
+                    using (var reader = await cmd.ExecuteReaderAsync())
                     {
-                        com.Connection = conn;
-                        com.Transaction = transaction;
-                        if (order != 0)
+                        if (!reader.HasRows)
                         {
+                            throw new Exception("warehouse not found");
+                        }                       
 
-                            com.CommandText = "SELECT * FROM PRODUCT_WAREHOUSE WHERE IDORDER = " + order;
-
-                            int rows = com.ExecuteNonQuery();
-                            if (rows != 0)
-                            {
-
-                            }
-                        }
                     }
 
-                    using (com = new SqlCommand())
+                }                
+                
+                using (var cmd = new SqlCommand())
+                {
+                    cmd.Connection = connection;                    
+                    cmd.CommandText = $"SELECT TOP 1 * FROM \"Order\" WHERE IDPRODUCT = " + productWarehouse.IdProduct + " AND AMOUNT = " + productWarehouse.Amount;
+                    
+                    using (var reader = await cmd.ExecuteReaderAsync())
                     {
-                        com.Connection = conn;
-                        com.Transaction = transaction;
-                        com.CommandText = "update order set FulfilledAt = " + DateTime.Now + " where idorder = " + order;
-                        com.ExecuteNonQuery();
-                    }
-
-                    using (com = new SqlCommand())
+                        await reader.ReadAsync();
+                        if (!reader.HasRows) throw new Exception("order not found");
+                        idOrder = int.Parse(reader["IdOrder"].ToString());
+                    }                        
+                    cmd.CommandText = $"SELECT TOP 1 * FROM \"ORDER\" WHERE CreatedAt > " + productWarehouse.CreatedAt.ToString("yyyy-mm-dd");
+                    
+                    using (var reader = await cmd.ExecuteReaderAsync())
                     {
-                        com.Connection = conn;
-                        com.Transaction = transaction;
-                        com.CommandText = "Select price from product where idproduct = " + productWarehouse.IdProduct;
-                        await com.ExecuteNonQueryAsync();
-                        SqlDataReader dr = await com.ExecuteReaderAsync();
-                        dr.Read();
-                        if (dr.HasRows)
-                        {
-                            price = int.Parse(dr["price"].ToString());
-                        }
-                        com.CommandText = $"INSERT INTO Product_Warehouse(IdWarehouse, IdProduct, IdOrder, Amount, Price, CreatedAt) VALUES( {productWarehouse.IdWarehouse}, {productWarehouse.IdProduct}, {order}, {productWarehouse.Amount}, {productWarehouse.Amount * price}, {productWarehouse.CreatedAt} );";
-                        await com.ExecuteNonQueryAsync();
+                        if (!reader.HasRows) throw new Exception("wrong createdAt");
                     }
+                    
+                    
+                }
 
-                    await transaction.CommitAsync();
-                    await conn.CloseAsync();
+                using (var cmd = new SqlCommand())
+                {
+                    cmd.Connection = connection;
+                    cmd.CommandText = $"SELECT TOP 1 * FROM \"Order\" WHERE IDPRODUCT = " + productWarehouse.IdProduct;
+                    
+                    using (var reader = await cmd.ExecuteReaderAsync())
+                    {                        
+                        if (!reader.HasRows) throw new Exception("order not found");
+                        await reader.ReadAsync();
+                        idOrder = int.Parse(reader["IdOrder"].ToString());
+                    }              
+                    
+
 
                 }
-            }
 
-            return 1;
+                using (var cmd = new SqlCommand())
+                {
+                    var transaction = (SqlTransaction)await connection.BeginTransactionAsync();
+                    cmd.Transaction = transaction;
+                    cmd.Connection = connection;
+
+                    try
+                    {
+                        cmd.CommandText = "UPDATE \"Order\" SET FulfilledAt = " + productWarehouse.CreatedAt.ToString("yyyy-mm-dd") + " WHERE IdOrder = " + idOrder;
+                       
+                        System.Diagnostics.Debug.WriteLine(price + "CommandText " + cmd.CommandText);
+                        int rowsUpdated = await cmd.ExecuteNonQueryAsync();                        
+                        if (rowsUpdated < 1) throw new Exception("problem");
+                        string pricePW = (Convert.ToDouble(productWarehouse.Amount) * price).ToString(CultureInfo.InvariantCulture);
+                        
+                        cmd.CommandText = "INSERT INTO Product_Warehouse(IdWarehouse, IdProduct, IdOrder, Amount, Price, CreatedAt) " +
+                            "VALUES(" + productWarehouse.IdWarehouse + ", " + productWarehouse.IdProduct + ", " + idOrder + ", " + productWarehouse.Amount + ", " + pricePW + ", " + productWarehouse.CreatedAt.ToString("yyyy-mm-dd") + ")";
+                                                
+                        int rowsInserted = await cmd.ExecuteNonQueryAsync();
+
+                        if (rowsInserted < 1) throw new Exception();
+
+                        await transaction.CommitAsync();
+                    }
+                    catch (Exception)
+                    {
+                        await transaction.RollbackAsync();
+                        throw new Exception("Transaction problem, no change commited");
+                    }
+
+                }
+
+                using (var cmd = new SqlCommand())
+                {
+                    cmd.Connection = connection;
+                    cmd.CommandText = "SELECT TOP 1 IdProductWarehouse FROM Product_Warehouse ORDER BY IdProductWarehouse DESC";
+                    using (var reader = await cmd.ExecuteReaderAsync())
+                    {
+                        if (!reader.HasRows) throw new Exception("not added");
+                        await reader.ReadAsync();
+                        idProductWarehouse = int.Parse(reader["IdProductWarehouse"].ToString());
+                    }                  
+
+
+                }
+               
+            }            
+
+            return idProductWarehouse;
+
+
         }
-
-        
     }
 }
+

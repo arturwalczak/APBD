@@ -31,7 +31,12 @@ namespace Task03.Models
             this.email = email ?? throw new ArgumentNullException(nameof(email));
             this.mothersName = mothersName ?? throw new ArgumentNullException(nameof(mothersName));
             this.fathersName = fathersName ?? throw new ArgumentNullException(nameof(fathersName));
-            students.Add(this);
+            
+        }
+
+        public static void AddStudent(Student student)
+        {
+            students.Add(student);
         }
 
 

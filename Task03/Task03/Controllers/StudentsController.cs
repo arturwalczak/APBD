@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 using System.Security.Cryptography;
 using System.Text.Json;
 using System.Text.RegularExpressions;
@@ -37,22 +38,21 @@ namespace Task03.Controllers
         public IActionResult UpdateStudent(string indexNumber, Student student)
         {
             Student studentFound = Student.students.Find(Student => Student.indexNumber.Equals(indexNumber));
-            if( studentFound == null)
+            if(studentFound == null && indexNumber != student.indexNumber)
             {
                 return BadRequest("Student with indexNumber: " + indexNumber + " not found");
             }
+            Student.students.Remove(studentFound);
             try
-            {
-                Student replaceStudent = student;
-                Student.students.Add(replaceStudent);
+            {                
+                Student.students.Add(student);
             }
             catch
             {
-                return BadRequest("Student cannot be created");
+                return BadRequest("Student cannot be edited");
             }
-            Student.students.Remove(studentFound);
-            return Ok(student);
             Program.SaveStudents();
+            return Ok(student);     
 
 
         }
@@ -68,19 +68,19 @@ namespace Task03.Controllers
             bool found = false;
             foreach(Student s in Student.students)
             {
-                s1 = Student.students.Find(Student => Student.indexNumber.Equals(Student.indexNumber));
-                if(s1 != null)
+                if (s.indexNumber.Equals(student.indexNumber))
                 {
                     found = true;
                 }
             }
+            
             if(found)
             {
                 return BadRequest("Student with this indexNumber already exists");
             }
             try
             {
-                Student s2 = student;
+                Student.AddStudent(student);
                 Program.SaveStudents();
                 return Ok("Student added");
             }

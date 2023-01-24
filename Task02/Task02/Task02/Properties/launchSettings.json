@@ -2,7 +2,7 @@
   "profiles": {
     "Task02": {
       "commandName": "Project",
-      "commandLineArgs": "C:\\Users\\Dom\\OneDrive\\PJATK\\APBD\\APBD\\Task02\\Task02\\dane.csv C:\\Users\\Dom\\OneDrive\\PJATK\\APBD\\ json"
+      "commandLineArgs": "C:\\Users\\Dom\\OneDrive\\PJATK\\APBD\\APBD\\Task02\\dane.csv C:\\Users\\Dom\\OneDrive\\PJATK\\APBD\\ json"
     }
   }
 }

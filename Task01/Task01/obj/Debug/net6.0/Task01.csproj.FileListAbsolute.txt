@@ -28,3 +28,18 @@ C:\Users\Dom\OneDrive\PJATK\APBD\Ćwiczenie 1\Task\Task01\Task01\obj\Debug\net6.
 C:\Users\Dom\OneDrive\PJATK\APBD\Ćwiczenie 1\Task\Task01\Task01\obj\Debug\net6.0\Task01.pdb
 C:\Users\Dom\OneDrive\PJATK\APBD\Ćwiczenie 1\Task\Task01\Task01\obj\Debug\net6.0\Task01.genruntimeconfig.cache
 C:\Users\Dom\OneDrive\PJATK\APBD\Ćwiczenie 1\Task\Task01\Task01\obj\Debug\net6.0\ref\Task01.dll
+C:\Users\Dom\OneDrive\PJATK\APBD\APBD\Task01\Task01\bin\Debug\net6.0\Task01.exe
+C:\Users\Dom\OneDrive\PJATK\APBD\APBD\Task01\Task01\bin\Debug\net6.0\Task01.deps.json
+C:\Users\Dom\OneDrive\PJATK\APBD\APBD\Task01\Task01\bin\Debug\net6.0\Task01.runtimeconfig.json
+C:\Users\Dom\OneDrive\PJATK\APBD\APBD\Task01\Task01\bin\Debug\net6.0\Task01.dll
+C:\Users\Dom\OneDrive\PJATK\APBD\APBD\Task01\Task01\bin\Debug\net6.0\Task01.pdb
+C:\Users\Dom\OneDrive\PJATK\APBD\APBD\Task01\Task01\obj\Debug\net6.0\Task01.csproj.AssemblyReference.cache
+C:\Users\Dom\OneDrive\PJATK\APBD\APBD\Task01\Task01\obj\Debug\net6.0\Task01.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dom\OneDrive\PJATK\APBD\APBD\Task01\Task01\obj\Debug\net6.0\Task01.AssemblyInfoInputs.cache
+C:\Users\Dom\OneDrive\PJATK\APBD\APBD\Task01\Task01\obj\Debug\net6.0\Task01.AssemblyInfo.cs
+C:\Users\Dom\OneDrive\PJATK\APBD\APBD\Task01\Task01\obj\Debug\net6.0\Task01.csproj.CoreCompileInputs.cache
+C:\Users\Dom\OneDrive\PJATK\APBD\APBD\Task01\Task01\obj\Debug\net6.0\Task01.dll
+C:\Users\Dom\OneDrive\PJATK\APBD\APBD\Task01\Task01\obj\Debug\net6.0\refint\Task01.dll
+C:\Users\Dom\OneDrive\PJATK\APBD\APBD\Task01\Task01\obj\Debug\net6.0\Task01.pdb
+C:\Users\Dom\OneDrive\PJATK\APBD\APBD\Task01\Task01\obj\Debug\net6.0\Task01.genruntimeconfig.cache
+C:\Users\Dom\OneDrive\PJATK\APBD\APBD\Task01\Task01\obj\Debug\net6.0\ref\Task01.dll

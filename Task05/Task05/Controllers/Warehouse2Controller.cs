@@ -24,7 +24,7 @@ namespace Task05.Controllers
             int idProductWarehouse;
             try { idProductWarehouse = await dBService.AddProductToWarehouseAsync(productWarehouse); }
             catch (Exception e) { return NotFound(e.Message); }
-            return Ok($"Added");
+            return Ok($"added");
         }
     }
 }

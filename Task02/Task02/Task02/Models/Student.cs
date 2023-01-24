@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,19 +12,19 @@ namespace Task02.Models
     internal class Student
     {
         [Required]
-        private string firstname { get; set; }
+        public string firstname { get; set; }
         [Required]
-        private string lastname { get; set; }
+        public string lastname { get; set; }
         [Required]
-        private string studentNumber { get; set; }
+        public string studentNumber { get; set; }
         [Required]
-        private string birthdate { get; set; }
+        public string birthdate { get; set; }
         [Required]
-        private string email { get; set; }
+        public string email { get; set; }
         [Required]
-        private string mothersName { get; set; }
+        public string mothersName { get; set; }
         [Required]
-        private string fathersName { get; set; }       
+        public string fathersName { get; set; }       
 
         
 
@@ -49,6 +50,17 @@ namespace Task02.Models
             return "firstname " + firstname + " lastname " + lastname + " student number " + studentNumber;
         }
 
-
+        internal static bool isStudent(string v1, string v2, string v3)
+        {
+            bool studentAlredyExists = false;
+            foreach(Student student in students)
+            {
+                if(student.firstname.Equals(v1) && student.lastname.Equals(v2) && student.studentNumber.Equals(v3))
+                {
+                    studentAlredyExists = true;
+                }                
+            }
+            return studentAlredyExists;
+        }
     }
 }

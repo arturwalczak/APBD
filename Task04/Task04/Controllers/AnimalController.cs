@@ -41,7 +41,7 @@ namespace Task04.Controllers
                 return BadRequest("Not deleted");
             }
             
-            return Ok("Succsesfully deleted!");
+            return Ok("deleted");
         }
 
         [HttpPost]
@@ -53,7 +53,7 @@ namespace Task04.Controllers
                 return BadRequest("Not created");
             }
             
-            return Ok("Succsesfully created!");
+            return Ok("created");
         }
 
         [HttpPut("{idAnimal}")]
@@ -65,7 +65,7 @@ namespace Task04.Controllers
                 return BadRequest("Not changed");
             }
            
-            return Ok("Succsesfully changed!");
+            return Ok("changed");
         }
     }
 }

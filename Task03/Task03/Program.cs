@@ -34,6 +34,7 @@ namespace Task03
                 {
                     string[] items = line.Split(",");
                     Student student1 = new Student(items[0], items[1], items[2], items[3], items[4], items[5], items[6], items[7], items[8]);
+                    Student.AddStudent(student1);
                 }
                 catch
                 {

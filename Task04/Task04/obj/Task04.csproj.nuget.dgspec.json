@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Dom\\OneDrive\\PJATK\\APBD\\APBD\\Task04\\Task04\\Task04\\Task04.csproj": {}
+    "C:\\Users\\Dom\\OneDrive\\PJATK\\APBD\\APBD\\Task04\\Task04\\Task04.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Dom\\OneDrive\\PJATK\\APBD\\APBD\\Task04\\Task04\\Task04\\Task04.csproj": {
+    "C:\\Users\\Dom\\OneDrive\\PJATK\\APBD\\APBD\\Task04\\Task04\\Task04.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dom\\OneDrive\\PJATK\\APBD\\APBD\\Task04\\Task04\\Task04\\Task04.csproj",
+        "projectUniqueName": "C:\\Users\\Dom\\OneDrive\\PJATK\\APBD\\APBD\\Task04\\Task04\\Task04.csproj",
         "projectName": "Task04",
-        "projectPath": "C:\\Users\\Dom\\OneDrive\\PJATK\\APBD\\APBD\\Task04\\Task04\\Task04\\Task04.csproj",
+        "projectPath": "C:\\Users\\Dom\\OneDrive\\PJATK\\APBD\\APBD\\Task04\\Task04\\Task04.csproj",
         "packagesPath": "C:\\Users\\Dom\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dom\\OneDrive\\PJATK\\APBD\\APBD\\Task04\\Task04\\Task04\\obj\\",
+        "outputPath": "C:\\Users\\Dom\\OneDrive\\PJATK\\APBD\\APBD\\Task04\\Task04\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Dom\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -72,7 +72,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

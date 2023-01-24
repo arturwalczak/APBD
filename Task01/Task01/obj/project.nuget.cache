@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "1lxo+hFVj2q8Zm7O+PM9In2hEaUcNR/6S4RYarN/6w4yp+ImSpgkATauzSjNwQho+gbduyiZEUQWgznV4drDcA==",
+  "dgSpecHash": "5XpzM2ITNVBa2nygKL00pHSm5zxOmD+ycxl5NACWPQNP99S+DsHHagaFglVFqprHcyQD88kFyrj0o6btIu44Kw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Dom\\OneDrive\\PJATK\\APBD\\Ćwiczenie 1\\Task\\Task01\\Task01\\Task01.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\Dom\\OneDrive\\PJATK\\APBD\\APBD\\Task01\\Task01\\Task01.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Dom\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.13\\microsoft.netcore.app.host.win-x64.6.0.13.nupkg.sha512",
+    "C:\\Users\\Dom\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.13\\microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "C:\\Users\\Dom\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.13\\microsoft.windowsdesktop.app.ref.6.0.13.nupkg.sha512",
+    "C:\\Users\\Dom\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.13\\microsoft.netcore.app.ref.6.0.13.nupkg.sha512"
+  ],
   "logs": []
 }
