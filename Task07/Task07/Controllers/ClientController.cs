@@ -18,7 +18,7 @@ namespace Task07.Controllers
         }
 
         [HttpDelete]
-        public async Task<IActionResult> GetTrips([FromBody] int idClient)
+        public async Task<IActionResult> DeleteClient([FromRoute] int idClient)
         {
             try
             {

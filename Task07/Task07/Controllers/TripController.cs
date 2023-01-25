@@ -34,7 +34,7 @@ namespace Task07.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddTripToClientAsync(int idTrip, AddTripToClientRequestDto dto)
+        public async Task<IActionResult> AddTripToClientAsync([FromRoute] int idTrip, [FromBody] AddTripToClientRequestDto dto)
         {
             try
             {

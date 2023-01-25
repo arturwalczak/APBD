@@ -23,12 +23,13 @@ namespace Task07.Services
         {
             Client client = new Client();
             var context = new S20293Context();
+            
             bool clientExists = await context.Clients.AnyAsync(c => c.Pesel == dto.Pesel);
             if (!clientExists)
             {
+                System.Diagnostics.Debug.WriteLine( "client doesnt exist" );
                 client = new Client
-                {
-                    IdClient = await context.Clients.Select(row => row.IdClient).MaxAsync() + 1,
+                {                    
                     FirstName = dto.FirstName,
                     LastName = dto.LastName,
                     Email = dto.Email,
@@ -39,18 +40,28 @@ namespace Task07.Services
                 await context.Clients.AddAsync(client);
                 await context.SaveChangesAsync();
             }
+            
+            bool clientReservedTrip = await context.ClientTrips.AnyAsync(row => row.IdClient == client.IdClient && row.IdTrip == idTrip);
+            if (clientReservedTrip) throw new Exception("Client has already reserved that trip");
+
+            
+            if (idTrip != dto.IdTrip)
+            {
+                throw new Exception("tripID from body != tripID from route");
+            }
+
             bool tripExists = await context.Trips.AnyAsync(c => c.IdTrip == idTrip);
             if (!tripExists)
             {
                 throw new Exception("trip doesnt exist");
             }
-            bool clientReservedTrip = await context.ClientTrips.AnyAsync(row => row.IdClient == client.IdClient && row.IdTrip == idTrip);
-            if (clientReservedTrip) throw new Exception("Client has already reserved that trip");
 
+            Client clientID = await context.Clients.Where(row => row.Pesel == dto.Pesel).FirstOrDefaultAsync();
+            Trip tripID = await context.Trips.Where(row => row.IdTrip == dto.IdTrip).FirstOrDefaultAsync();
             await context.ClientTrips.AddAsync(new ClientTrip
             {
-                IdClient = client.IdClient,
-                IdTrip = idTrip,
+                IdClient = clientID.IdClient,
+                IdTrip = tripID.IdTrip,
                 RegisteredAt = DateTime.Now,
                 PaymentDate = dto.PaymentDate
             });
