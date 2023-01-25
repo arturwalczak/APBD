@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "KNUsIs4MtwTs60om9EEl4Wnq2cGLB3xkHaKwZ8u+JX7N1ou0yQ8AVwzizJTDu0dRPOxkO6DpZ+2+cxc4nDo/Rg==",
+  "dgSpecHash": "a4IWU9Zwnb9c6jCNzslBCFiil+MMb32+TxbRngcJ2uh6MRcmVB4DSDFTFBHf05se4xvyhCKE+8D9hTPWcNy6CA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Dom\\OneDrive\\PJATK\\APBD\\APBD\\Task08\\Task08\\Task08\\Task08.csproj",
+  "projectFilePath": "C:\\Users\\Dom\\OneDrive\\PJATK\\APBD\\APBD\\Task08\\Task08\\Task08.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Dom\\.nuget\\packages\\arch.entityframeworkcore\\2.1.15\\arch.entityframeworkcore.2.1.15.nupkg.sha512",
     "C:\\Users\\Dom\\.nuget\\packages\\arch.entityframeworkcore.abstractions\\2.1.15\\arch.entityframeworkcore.abstractions.2.1.15.nupkg.sha512",
@@ -155,7 +155,11 @@
     "C:\\Users\\Dom\\.nuget\\packages\\system.windows.extensions\\5.0.0\\system.windows.extensions.5.0.0.nupkg.sha512",
     "C:\\Users\\Dom\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\Dom\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\Dom\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512"
+    "C:\\Users\\Dom\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
+    "C:\\Users\\Dom\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.13\\microsoft.netcore.app.host.win-x64.6.0.13.nupkg.sha512",
+    "C:\\Users\\Dom\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.13\\microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "C:\\Users\\Dom\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.13\\microsoft.windowsdesktop.app.ref.6.0.13.nupkg.sha512",
+    "C:\\Users\\Dom\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.13\\microsoft.netcore.app.ref.6.0.13.nupkg.sha512"
   ],
   "logs": []
 }

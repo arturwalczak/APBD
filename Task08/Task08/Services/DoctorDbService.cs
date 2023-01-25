@@ -73,7 +73,8 @@ namespace Task08.Services
         public async Task<System.Collections.Generic.IEnumerable<DoctorDto>> GetDoctorsAsync()
         {
             return await context.Doctor.Select(e => new DoctorDto
-            {                
+            {   
+                Id = e.IdDoctor,
                 FirstName = e.FirstName,
                 LastName = e.LastName,
                 Email = e.Email
